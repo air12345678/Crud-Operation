@@ -1,0 +1,43 @@
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark kk">
+    <a class="navbar-brand" routerLink="/">Start App</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" 
+    id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+     aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/instruction">Instruction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!curuser" routerLink="/login">Login</a>
+
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary" *ngIf="curuser"(click)="logout()" >Logout
+            <!-- <button class="btn" (click)="logout()">Logout</button> -->
+          </button>
+        </li>
+        </ul>
+    <!-- Navbar-->
+    <!-- <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item nav-link" *ngIf="curuser"(click)="logout()" >Logout</a>
+          </div>
+      </li>
+  </ul> -->
+    </div>
+  </nav>
+
+  

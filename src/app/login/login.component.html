@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Stacked form</h2>
+    <form #myform="ngForm">
+      <div class="form-group">
+        <label for="email">Username:</label>
+        <input type="text" name = "stdsid" #id = "ngModel"
+         [(ngModel)] ="mydata.id" required>
+   
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="text" name = "password" #password = "ngModel"
+    [(ngModel)] ="mydata.password" required>
+    
+      </div>
+     <button type="submit" class="btn btn-primary" (click)="fun()">Login</button>
+    </form>
+  </div>
+

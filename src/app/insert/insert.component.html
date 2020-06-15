@@ -1,0 +1,60 @@
+<div class="container myform">
+    <form #userForm="ngForm">
+       
+        <label>Student ID:</label>
+        <input type="text" id="stuid" name="id" #id="ngModel"
+        placeholder="Student ID.."[class.is-invalid]="id.invalid && id.touched" 
+          required [(ngModel)]="mydata.id" >
+         <div *ngIf="id.errors && (id.invalid || id.touched)">
+            <small class="text-danger" *ngIf="id.errors.required">Id must be required</small>
+            <!-- <small class="text-danger" *ngIf="email.errors.pattern">Id must be in appropriate format(0-9)</small> -->
+           
+         </div> 
+         <label>Password:</label>
+         <input type="password" id="pass" name ="password" #password="ngModel"
+         placeholder="Password" [class.is-invalid]="password.invalid && password.touched"
+          required [(ngModel)] ="mydata.password">
+          <div *ngIf="password.errors && (password.invalid || password.touched)">
+            <small class="text-danger" *ngIf="password.errors.required">Password must be required</small>
+          </div>
+
+        <label>Student Name:</label>
+        <input type="text" id="fname" name="name" #name="ngModel"
+          placeholder="Student name.." [class.is-invalid]="name.invalid && name.touched"
+         required  [(ngModel)]="mydata.name">
+        <small class="text-danger"
+        [class.d-none]="name.valid || name.untouched">Name is required</small>
+
+        <label>Branch:</label>
+        <input type="text" id="branch" name="branch" #branch="ngModel"
+          placeholder="Student Branch.." [class.is-invalid]="branch.invalid && branch.touched"
+         required  [(ngModel)]="mydata.branch">
+        <small class="text-danger"
+        [class.d-none]="branch.valid || branch.untouched">Branch is required</small>
+
+        <label>Email:</label>
+        <input type="email" id="email" 
+        pattern = "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
+        #email = "ngModel" placeholder="Your email address" class="form-control"
+        [class.is-invalid]="email.invalid && email.touched"
+        name="email" required [(ngModel)]="mydata.email">
+        <div *ngIf="email.errors && (email.invalid || email.touched)">
+          <small class="text-danger" *ngIf="email.errors.required">Email must be required</small>
+          <small class="text-danger" *ngIf="email.errors.pattern">Email must be in appropriate format</small>
+        </div>
+
+        <label>Mobile No:</label>
+        <input type="tel" id="phone" name="phone" #phone = "ngModel" 
+        placeholder="Mobile No." required  [class.is-invalid]="phone.invalid && phone.touched"
+         [(ngModel)]="mydata.phone" maxlength="10">
+         <small class="text-danger"
+        [class.d-none]="phone.valid || phone.untouched">Mobile No. is required</small>
+        
+    
+         <!-- <input type="submit" value="Submit"> -->
+         
+  <button  class="btn btn-primary" [disabled]="userForm.form.invalid"
+   style="margin-left: 40%;"
+          (click)="create()">Create</button>
+        </form>
+        </div>

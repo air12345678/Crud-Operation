@@ -1,0 +1,49 @@
+tr{
+    text-align:center;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+input[type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=tel]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+ .btn:hover {
+    background-color: #45a049;
+  }
+  .myform{
+    border-radius: 5px;
+    background-color:gray;
+    padding: 20px;
+    margin-top: 5%;
+    margin-left: 2%;
+  }
+  label{
+      font-weight: bold;
+  }
+  @media (max-width:1280px){
+      .myform{
+          width:auto;
+      }
+  }
