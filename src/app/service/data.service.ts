@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Mydata } from '../models/mydata';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,7 @@ export class DataService {
     return this.http.get('http://localhost:3000/list-student');
     
   }
-  loginstudents(s:Mydata):any{
+  loginstudents(s:User):any{
     return this.http.post('http://localhost:3000/login-student',s);
     
   }

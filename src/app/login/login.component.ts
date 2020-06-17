@@ -42,11 +42,12 @@ export class LoginComponent implements OnInit {
     //  },
     //  err => console.log(err)
     //  )
-    this.ds.loginstudents(this.mydata)
+    this.ds.loginstudents(this.userdata)
     .subscribe((d)=>{
       if(d.status == "Ok")
       {
-        localStorage.setItem("user",this.mydata.id);
+        console.log(d.resultData[0].name);
+        localStorage.setItem("user",d.resultData[0].name);
         this.router.navigate(['/main']);
       }
       else{
